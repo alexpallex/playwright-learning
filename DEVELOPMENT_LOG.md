@@ -9,7 +9,8 @@
 - Final cross-browser run: 6 of 6 passed in 2.5 seconds. This covers two tests in Chromium, Firefox, and WebKit.
 - `npm install --package-lock-only` completed with 0 reported vulnerabilities.
 - Corrected the npm project name to `playwright-learning`.
-- Initialized a local Git repository on `main`. No remote has been added and nothing has been uploaded yet.
+- Initialized a local Git repository on `main` and created the first commit.
+- Pushed the project to the public GitHub repository `alexpallex/playwright-learning`.
 
 ## Current tests
 
