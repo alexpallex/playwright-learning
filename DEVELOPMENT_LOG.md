@@ -16,3 +16,10 @@
 
 - `has title`: checks that the Playwright page title contains “Playwright”.
 - `get started link`: follows the “Get started” link and checks that the “Installation” heading appears.
+
+## Local to-do app and Playwright test
+
+- Created `todo-app.html` as a small local practice page.
+- Added a Playwright test that adds a task and checks that it appears in the list.
+- Verified the test in Chromium: 3 tests passed.
+- Verified the full browser run: 9 tests passed across Chromium, Firefox, and WebKit.

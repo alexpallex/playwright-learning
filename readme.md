@@ -34,3 +34,12 @@ Open the repository's Actions tab to view the CI result and download its report.
 ## Latest local verification
 
 2026-11-04: 6 of 6 runs passed across Chromium, Firefox, and WebKit.
+
+## Local practice app
+
+This project includes a small to-do app in `todo-app.html`. A Playwright test checks that a task can be added to the list.
+
+Run the tests in all configured browsers with:
+
+```powershell
+npx playwright test

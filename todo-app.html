@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do list practice</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      input,
+      button {
+        padding: 8px;
+        font-size: 1rem;
+      }
+
+      li {
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>My to-do list</h1>
+
+      <form id="todo-form">
+        <label for="task-input">New task</label>
+        <input id="task-input" name="task" autocomplete="off" required />
+        <button type="submit">Add task</button>
+      </form>
+
+      <ul id="task-list" aria-label="Tasks"></ul>
+    </main>
+
+    <script>
+      const form = document.querySelector('#todo-form');
+      const input = document.querySelector('#task-input');
+      const taskList = document.querySelector('#task-list');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const task = input.value.trim();
+        if (!task) return;
+
+        const item = document.createElement('li');
+        item.textContent = task;
+        taskList.appendChild(item);
+
+        input.value = '';
+        input.focus();
+      });
+    </script>
+  </body>
+</html>
