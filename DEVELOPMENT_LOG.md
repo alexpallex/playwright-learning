@@ -30,4 +30,4 @@
 - Updated the test to build the file URL from the test file's location so it works on Windows and Linux.
 - Added `tsconfig.json` with Node16 module settings for Node.js type support.
 - Local verification: 3 tests passed in Chromium; all 9 tests passed across Chromium, Firefox, and WebKit.
-- GitHub Actions will verify the fix after the next push.
+- GitHub Actions verification after the fix passed on 2026-11-05 (9 of 9 browser tests).
