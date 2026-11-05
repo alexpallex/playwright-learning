@@ -45,3 +45,20 @@ test('does not add an empty task', async ({ page }) => {
     page.getByRole('list', { name: 'Tasks' }).getByRole('listitem'),
   ).toHaveCount(0);
 });
+
+test('keeps two added tasks in the list', async ({ page }) => {
+  await page.goto(todoAppUrl);
+
+  const taskInput = page.getByRole('textbox', { name: 'New task' });
+  const addTaskButton = page.getByRole('button', { name: 'Add task' });
+
+  await taskInput.fill('Buy milk');
+  await addTaskButton.click();
+
+  await taskInput.fill('Practice Playwright');
+  await addTaskButton.click();
+
+  await expect(
+    page.getByRole('list', { name: 'Tasks' }).getByRole('listitem'),
+  ).toHaveText(['Buy milk', 'Practice Playwright']);
+});

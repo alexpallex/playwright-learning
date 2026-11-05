@@ -37,3 +37,9 @@
 - Added a test that checks the form rejects an empty task and adds nothing to the list.
 - Local verification: 12 tests passed across Chromium, Firefox, and WebKit.
 - GitHub Actions verification will run after the next push.
+
+## Multiple task entries
+
+- Added a test that adds two tasks and checks that both remain in the list.
+- Local verification: 15 tests passed across Chromium, Firefox, and WebKit.
+- GitHub Actions verification will run after the next push.
