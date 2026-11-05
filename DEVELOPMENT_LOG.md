@@ -23,3 +23,11 @@
 - Added a Playwright test that adds a task and checks that it appears in the list.
 - Verified the test in Chromium: 3 tests passed.
 - Verified the full browser run: 9 tests passed across Chromium, Firefox, and WebKit.
+
+### Cross-platform file path fix
+
+- The first GitHub Actions run could not find `todo-app.html` because its file URL used a Windows-only path.
+- Updated the test to build the file URL from the test file's location so it works on Windows and Linux.
+- Added `tsconfig.json` with Node16 module settings for Node.js type support.
+- Local verification: 3 tests passed in Chromium; all 9 tests passed across Chromium, Firefox, and WebKit.
+- GitHub Actions will verify the fix after the next push.
