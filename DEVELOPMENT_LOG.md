@@ -31,3 +31,9 @@
 - Added `tsconfig.json` with Node16 module settings for Node.js type support.
 - Local verification: 3 tests passed in Chromium; all 9 tests passed across Chromium, Firefox, and WebKit.
 - GitHub Actions verification after the fix passed on 2026-11-05 (9 of 9 browser tests).
+
+## Empty task validation
+
+- Added a test that checks the form rejects an empty task and adds nothing to the list.
+- Local verification: 12 tests passed across Chromium, Firefox, and WebKit.
+- GitHub Actions verification will run after the next push.

@@ -23,8 +23,25 @@ test('adds a task to the list', async ({ page }) => {
   await page.goto(todoAppUrl);
   await page.getByRole('textbox', { name: 'New task' }).fill('Learn Playwright');
   await page.getByRole('button', { name: 'Add task' }).click();
+
   await expect(page.getByRole('listitem')).toHaveText('Learn Playwright');
   await expect(
     page.getByRole('textbox', { name: 'New task' }),
   ).toHaveValue('');
+});
+
+test('does not add an empty task', async ({ page }) => {
+  await page.goto(todoAppUrl);
+
+  const taskInput = page.getByRole('textbox', { name: 'New task' });
+  await page.getByRole('button', { name: 'Add task' }).click();
+
+  const isValid = await taskInput.evaluate(
+    (element) => (element as HTMLInputElement).validity.valid,
+  );
+
+  expect(isValid).toBe(false);
+  await expect(
+    page.getByRole('list', { name: 'Tasks' }).getByRole('listitem'),
+  ).toHaveCount(0);
 });
